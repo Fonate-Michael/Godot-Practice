@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cmylv8c38y1j5"]
+
+[ext_resource type="PackedScene" uid="uid://c4qfb0ovwbp0f" path="res://block.tscn" id="1_808ti"]
+[ext_resource type="PackedScene" uid="uid://c35h2deaklq4c" path="res://player.tscn" id="2_frwqc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_c3xmn"]
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t53rk"]
+size = Vector3(10, 0.5, 10)
+
+[node name="levelA" type="Node3D" unique_id=1642045416]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1525637745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.018846035)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=958148333]
+mesh = SubResource("BoxMesh_c3xmn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1875012653]
+shape = SubResource("BoxShape3D_t53rk")
+
+[node name="Block1" parent="." unique_id=257684477 instance=ExtResource("1_808ti")]
+transform = Transform3D(1, 0, 0, 0, 0.96637195, 0.25714827, 0, -0.25714827, 0.96637195, 0, 5.6073866, -1.7110057)
+
+[node name="Block2" parent="." unique_id=1195524924 instance=ExtResource("1_808ti")]
+transform = Transform3D(0.9729562, 0.23098977, 0, -0.23098977, 0.9729562, 0, 0, 0, 1, 2.24914, 3.32953, 0)
+
+[node name="Block3" parent="." unique_id=2042303960 instance=ExtResource("1_808ti")]
+transform = Transform3D(1, 0, 0, 0, 0.9586323, -0.28464735, 0, 0.28464735, 0.9586323, 0, 4.211879, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=453959156]
+transform = Transform3D(1, 0, 0, 0, 0.9579107, 0.28706646, 0, -0.28706646, 0.95791066, 0.777442, 5.803634, 9.477217)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=777331158]
+transform = Transform3D(1, 0, 0, 0, 0.8548656, 0.5188495, 0, -0.5188495, 0.8548656, 0, 3.8806024, 4.5511017)
+shadow_enabled = true
+
+[node name="player" parent="." unique_id=1869657257 instance=ExtResource("2_frwqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3)

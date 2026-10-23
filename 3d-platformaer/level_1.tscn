@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dbji4ob8r6yfp"]
+
+[ext_resource type="PackedScene" uid="uid://c54y4dlj7ngjt" path="res://block.tscn" id="1_3hls8"]
+[ext_resource type="PackedScene" uid="uid://bqs283sp6n2oy" path="res://mimi.tscn" id="2_hbghi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5665l"]
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5665l"]
+size = Vector3(10, 0.5, 10)
+
+[node name="Level1" type="Node3D" unique_id=1364041809]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1017039602]
+transform = Transform3D(0.99893415, 0.008828139, -0.045306247, 0.0049820775, 0.95518446, 0.29596964, 0.045888674, -0.29587984, 0.95412236, -0.11084032, 4.899601, 8.82495)
+fov = 77.72802
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=933437938]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.26862812, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=298099335]
+mesh = SubResource("BoxMesh_5665l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=423099816]
+shape = SubResource("BoxShape3D_5665l")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1595784341]
+transform = Transform3D(1, 0, 0, 0, -0.7308452, 0.6825433, 0, -0.6825433, -0.7308452, 0, 5.006101, -8.992881)
+shadow_enabled = true
+
+[node name="Blocks" type="Node3D" parent="." unique_id=1035706840]
+
+[node name="Block1" parent="Blocks" unique_id=627049329 instance=ExtResource("1_3hls8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.981389, 0)
+
+[node name="Block2" parent="Blocks" unique_id=2113817017 instance=ExtResource("1_3hls8")]
+transform = Transform3D(1, 0, 0, 0, 0.90989876, 0.41483036, 0, -0.41483036, 0.90989876, 0, 5.876622, 1.6311407)
+
+[node name="Block3" parent="Blocks" unique_id=334617124 instance=ExtResource("1_3hls8")]
+transform = Transform3D(1, 0, 0, 0, 0.946091, 0.3239012, 0, -0.3239012, 0.946091, 0, 6.9076853, -2.5911655)
+
+[node name="Mimi" parent="." unique_id=711571303 instance=ExtResource("2_hbghi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3158674, 0.9407263, 3.1192274)
